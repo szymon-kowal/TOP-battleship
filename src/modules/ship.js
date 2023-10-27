@@ -1,15 +1,22 @@
 // length is 1 indexed num 
 
 class Ship {
+    /*
+    * @param {int, int[x, y], boolean}
+    */
     constructor(length, position, isVertical) {
         this.length = length;
         this.position = position;
         this.isVertical = isVertical;
-        this.HP = new Array(length).fill(false);
+        this.HP = new Array(length).fill(true);
     }
 
     getHP() {
         return this.HP;
+    }
+
+    getPosition() {
+        return this.position;
     }
 
     getLength() {
@@ -22,20 +29,13 @@ class Ship {
 
     hit(num) {
         if (num < 0 || num > this.HP.length - 1) throw new Error('Wrong number homie');
-        this.HP[num] = true;
+        this.HP[num] = false;
     }
 
     isSunk() {
-        return this.HP.every(val => val === true);
+        return this.HP.every(val => val === false);
     }
 
 };
-
-const ship = new Ship(3, [0, 0], false);
-ship.hit(0);
-ship.hit(1);
-ship.hit(2);
-
-console.log(ship.getHP());
 
 export default Ship;

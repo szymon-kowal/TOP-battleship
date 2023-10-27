@@ -14,13 +14,13 @@ import Ship from '../modules/ship';
 
 test('Is ship being created ?',() => {
     const ship = new Ship(3, [0, 0], false);
-    expect(ship.getHP()).toEqual([false, false, false]);
+    expect(ship.getHP()).toEqual([true, true, true]);
 });
 
 test('Is ship being hit ?', () => {
     const ship = new Ship(3, [0, 0], false);
     ship.hit(2);
-    expect(ship.getHP()).toEqual([false, false, true]);
+    expect(ship.getHP()).toEqual([true, true, false]);
 });
 
 test('Is hit behaving correctly when it is used out of bounds ?', () => {
@@ -32,7 +32,7 @@ test('Is ship correctly returning is it sunk ?', () => {
     ship.hit(0);
     ship.hit(1);
     ship.hit(2);
-    expect(ship.getHP()).toEqual([true, true, true]);
+    expect(ship.getHP()).toEqual([false, false, false]);
     expect(ship.isSunk()).toBe(true);
 });
 
