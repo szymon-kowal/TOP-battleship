@@ -26,7 +26,6 @@ class Gameboard {
         }
     };
 
-    // param int, int;
     receiveAttack(row, col) {
         if (row < 0 || col < 0 ||
             row >= this.board.length || col >= this.board[0].length || 
@@ -35,7 +34,9 @@ class Gameboard {
         } else {
             const {fleetIndex, hitIndex} = this.board[row][col];
             this.board[row][col].wasShot = true;
-            this.fleet[fleetIndex].hit(hitIndex);
+            if (fleetIndex !== null) {
+                this.fleet[fleetIndex].hit(hitIndex);
+            }
         }
     };
 
@@ -62,6 +63,10 @@ class Gameboard {
         };
         return isLegit;
     };
+
+    wasCellShot(row, col) {
+        return this.board[row][col].wasShot;
+    }
 
     static initializeBoard() {
         const arrayBoard = [];

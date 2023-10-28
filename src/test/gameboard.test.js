@@ -76,3 +76,11 @@ test('Is game ended ?', () => {
     expect(gameboard.isGameEnded()).toBe(true);
 });
 
+test('Was the place shot ?', () => {
+    const ship5 = new Ship(2, [0, 0], false);
+    const gameboard = new Gameboard;
+    gameboard.placeShip(ship5);
+    gameboard.receiveAttack(0, 0);
+    expect(gameboard.wasCellShot(0, 0)).toBe(true);
+});
+
