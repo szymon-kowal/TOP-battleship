@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+:root {
+  --topbot-colors: rgb(8, 122, 103);
+  --cont-color: rgb(64, 166, 184);
+  --grid-size: 30px;
+}
+
+* {
+  outline: solid 1px black;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: var(--topbot-colors);
+}
+
+.content {
+  flex: 1;
+  background-color: var(--cont-color);
+  display: flex;
+}
+
+.left-board {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-board {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.name {
+  text-align: center;
+}
+
+.board {
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: repeat(10, var(--grid-size));
+  grid-template-rows: repeat(10, var(--grid-size));
+}
+
+.footer {
+  background-color: var(--topbot-colors);
+}
+
+.hit {
+  background-color: red;
+}
+
+.ship {
+  background-color: green;
+}
+
+.shipHit {
+  background-color: orange;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: aqua;
+  flex: 1;
+}

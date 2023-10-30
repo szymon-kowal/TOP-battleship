@@ -48,9 +48,9 @@ class Gameboard {
 
     checkPlacing(length, position, isVertical) {
         let isLegit = true;
-        if (isVertical && !((position[0] + length -1) < 10) ||
+        if (isVertical && !((position[0] + length - 1) < 10) ||
                     (!(isVertical) && !((position[1] + length - 1) < 10))) {
-            isLegit = false;
+            return false;
         };
         for (let i = 0; i < length; i += 1) {
             if (isVertical && 
