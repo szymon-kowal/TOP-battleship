@@ -41,7 +41,6 @@ class Player {
             this.ships.shift();
         }
     }
-    
 };
 
 export default Player;
