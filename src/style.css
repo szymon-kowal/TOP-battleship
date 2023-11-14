@@ -7,13 +7,20 @@ body {
 }
 
 :root {
-  --topbot-colors: rgb(8, 122, 103);
-  --cont-color: rgb(64, 166, 184);
+  --bckg-colors: #eee;
+  --cont-color: #70bef4;
   --grid-size: 30px;
+  --gap-size: 5px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+body {
+  font-family: "Orbitron", sans-serif;
 }
 
 * {
-  outline: solid 1px black;
+  outline: solid 1px red;
 }
 
 .container {
@@ -24,13 +31,17 @@ body {
 }
 
 .header {
-  background-color: var(--topbot-colors);
+  background-color: var(--bckg-colors);
+  text-align: center;
+  font-size: 5rem;
 }
 
 .content {
   flex: 1;
-  background-color: var(--cont-color);
+  background-color: var(--bckg-colors);
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-board {
@@ -49,29 +60,35 @@ body {
 
 .name {
   text-align: center;
+  font-size: 2rem;
 }
 
 .board {
-  margin-top: 75px;
+  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(10, var(--grid-size));
   grid-template-rows: repeat(10, var(--grid-size));
+  gap: var(--gap-size);
+  padding: var(--gap-size);
+  border: 2px solid black;
 }
 
 .footer {
-  background-color: var(--topbot-colors);
+  background-color: var(--bckg-colors);
+  text-align: center;
 }
 
 .hit {
-  background-color: red;
+  background-color: rgb(216, 108, 108);
+  content: "\f111";
 }
 
 .ship {
-  background-color: green;
+  background-color: rgb(113, 194, 113);
 }
 
 .shipHit {
-  background-color: orange;
+  background-color: rgb(56, 178, 209);
 }
 
 .center {
@@ -82,4 +99,43 @@ body {
   font-weight: bold;
   background-color: aqua;
   flex: 1;
+}
+
+.cell {
+  outline: 1px solid black;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  outline: 2px solid aqua;
+}
+
+.hit,
+.shipHit {
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+@media (max-width: 770px) {
+  .content {
+    flex-direction: column;
+  }
+  .right-board {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  :root {
+    --grid-size: 20px;
+  }
 }

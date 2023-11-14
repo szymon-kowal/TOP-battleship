@@ -40,10 +40,12 @@ class Game {
                 }
                 if (gameboard.board[i][j].wasShot === true) {
                     cells[index].classList.add('hit');
+                    cells[index].textContent = 'x';
                 }
                 if (gameboard.board[i][j].wasShot === true && 
                     gameboard.board[i][j].fleetIndex !== null) {
                     cells[index].classList.add('shipHit');  
+                    cells[index].textContent = 'o';
                 };
             }
         }
@@ -56,7 +58,6 @@ class Game {
             const colIndex = parseInt(clickedCell.dataset.col, 10);
     
             if (!clickedCell.classList.contains('hit')) {
-                console.log(rowIndex, colIndex);
                 this.player1.takeTurn(rowIndex, colIndex);
                 this.player2.takeTurn();
                 this.displayBoard(playerB, this.gameboardLeft);
