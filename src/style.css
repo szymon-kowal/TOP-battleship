@@ -19,9 +19,9 @@ body {
   font-family: "Orbitron", sans-serif;
 }
 
-* {
+/* * {
   outline: solid 1px red;
-}
+} */
 
 .container {
   min-height: 100vh;
