@@ -61,16 +61,10 @@ This project involves creating a Battleship game that can be played against the 
    - Develop a system for players to place their ships.
    - Options include typing coordinates or implementing drag and drop.
 
-7. **Computer Player Intelligence (Optional):**
-   - Enhance the computer player's intelligence, e.g., trying adjacent slots after a 'hit.'
-
-8. **Two-Player Option (Optional):**
-   - Implement a two-player option with turn-based gameplay.
-   - Ensure playability on mobile screens and implement a 'pass device' screen.
-
 ## Getting Started
 
-To run the game,install all dependencies by typing in console `npm install` and run `npm run watch`,then open the `index.html` file in your preferred web browser. Follow the on-screen instructions to play against the computer.
+To run the game,install all dependencies by typing in console `npm install` and run `npm run watch`,then open the `index.html` file in your preferred web browser. 
+Follow the on-screen instructions to play against the computer.
 
 
 Happy coding!
